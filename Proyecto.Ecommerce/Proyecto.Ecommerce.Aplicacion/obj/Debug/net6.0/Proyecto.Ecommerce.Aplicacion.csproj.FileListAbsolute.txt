@@ -1,0 +1,15 @@
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\bin\Debug\net6.0\Proyecto.Ecommerce.Aplicacion.deps.json
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\bin\Debug\net6.0\Proyecto.Ecommerce.Aplicacion.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\bin\Debug\net6.0\Proyecto.Ecommerce.Aplicacion.pdb
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\obj\Debug\net6.0\Proyecto.Ecommerce.Aplicacion.csproj.AssemblyReference.cache
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\obj\Debug\net6.0\Proyecto.Ecommerce.Aplicacion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\obj\Debug\net6.0\Proyecto.Ecommerce.Aplicacion.AssemblyInfoInputs.cache
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\obj\Debug\net6.0\Proyecto.Ecommerce.Aplicacion.AssemblyInfo.cs
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\obj\Debug\net6.0\Proyecto.Ecommerce.Aplicacion.csproj.CoreCompileInputs.cache
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\obj\Debug\net6.0\Proyecto.Ecommerce.Aplicacion.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\obj\Debug\net6.0\refint\Proyecto.Ecommerce.Aplicacion.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\obj\Debug\net6.0\Proyecto.Ecommerce.Aplicacion.pdb
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\obj\Debug\net6.0\ref\Proyecto.Ecommerce.Aplicacion.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\bin\Debug\net6.0\Proyecto.Ecommerce.Dominio.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\bin\Debug\net6.0\Proyecto.Ecommerce.Dominio.pdb
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Aplicacion\obj\Debug\net6.0\Proyecto.Ecommerce.Aplicacion.csproj.CopyComplete

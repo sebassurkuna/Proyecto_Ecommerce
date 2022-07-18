@@ -1,0 +1,12 @@
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Dominio\bin\Debug\net6.0\Proyecto.Ecommerce.Dominio.deps.json
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Dominio\bin\Debug\net6.0\Proyecto.Ecommerce.Dominio.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Dominio\bin\Debug\net6.0\Proyecto.Ecommerce.Dominio.pdb
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Dominio\obj\Debug\net6.0\Proyecto.Ecommerce.Dominio.csproj.AssemblyReference.cache
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Dominio\obj\Debug\net6.0\Proyecto.Ecommerce.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Dominio\obj\Debug\net6.0\Proyecto.Ecommerce.Dominio.AssemblyInfoInputs.cache
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Dominio\obj\Debug\net6.0\Proyecto.Ecommerce.Dominio.AssemblyInfo.cs
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Dominio\obj\Debug\net6.0\Proyecto.Ecommerce.Dominio.csproj.CoreCompileInputs.cache
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Dominio\obj\Debug\net6.0\Proyecto.Ecommerce.Dominio.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Dominio\obj\Debug\net6.0\refint\Proyecto.Ecommerce.Dominio.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Dominio\obj\Debug\net6.0\Proyecto.Ecommerce.Dominio.pdb
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Dominio\obj\Debug\net6.0\ref\Proyecto.Ecommerce.Dominio.dll

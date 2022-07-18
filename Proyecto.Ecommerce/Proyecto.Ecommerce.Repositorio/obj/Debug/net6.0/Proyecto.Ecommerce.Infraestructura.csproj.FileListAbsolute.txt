@@ -1,0 +1,17 @@
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\bin\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.deps.json
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\bin\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\bin\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.pdb
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\bin\Debug\net6.0\Proyecto.Ecommerce.Dominio.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\bin\Debug\net6.0\Proyecto.Ecommerce.Dominio.pdb
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\obj\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.csproj.AssemblyReference.cache
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\obj\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\obj\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.AssemblyInfoInputs.cache
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\obj\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.AssemblyInfo.cs
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\obj\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.csproj.CoreCompileInputs.cache
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\obj\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.csproj.CopyComplete
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\obj\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\obj\Debug\net6.0\refint\Proyecto.Ecommerce.Infraestructura.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\obj\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.pdb
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\obj\Debug\net6.0\ref\Proyecto.Ecommerce.Infraestructura.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\bin\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.runtimeconfig.json
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.Repositorio\obj\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.genruntimeconfig.cache
