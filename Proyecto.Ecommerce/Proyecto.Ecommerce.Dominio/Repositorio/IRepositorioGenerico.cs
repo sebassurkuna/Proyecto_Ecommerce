@@ -49,8 +49,8 @@ namespace Proyecto.Ecommerce.Dominio.Repositorio
         /// Método que permite modificar los valores de una entidad en la tabla corresponsiente a la entidad
         /// </summary>
         /// <param name="Entity"></param>
-        /// <returns>Task</returns>
-        Task UpdateAsync(T Entity);
+        /// <returns>Task&lt;bool&gt;</returns>
+        Task<bool> UpdateAsync(T Entity);
 
         /// <summary>
         /// Método que permite eliminar una entidad presente en la tabla correspondinte a la entidad
@@ -58,5 +58,12 @@ namespace Proyecto.Ecommerce.Dominio.Repositorio
         /// <param name="Entity"></param>
         /// <returns>Task&lt;bool&gt;</returns>
         Task<bool> DeleteAsync(T Entity);
+
+        /// <summary>
+        /// Método que permite eliminar todas las entidades presente en la tabla correspondinte a la entidad
+        /// </summary>
+        /// <param name="Entity"></param>
+        /// <returns>Task&lt;bool&gt;</returns>
+        Task<bool> DeleteAllAsync(List<T> listEntities);
     }
 }

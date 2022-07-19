@@ -65,3 +65,5 @@ C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.E
 C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.WebAPI\bin\Debug\net6.0\Proyecto.Ecommerce.Aplicacion.pdb
 C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.WebAPI\bin\Debug\net6.0\Proyecto.Ecommerce.Infraestructura.pdb
 C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.WebAPI\bin\Debug\net6.0\Proyecto.Ecommerce.Dominio.pdb
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.WebAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Proyecto_ECommerce_Santacruz\Proyecto_Ecommerce\Proyecto.Ecommerce\Proyecto.Ecommerce.WebAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

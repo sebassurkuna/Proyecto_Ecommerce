@@ -24,7 +24,7 @@ namespace Proyecto.Ecommerce.Infraestructura.ConfiguracionEntidades
                 .IsRequired().HasMaxLength(20).HasColumnName("Password");
 
             builder.Property(c => c.NombreUsuario)
-                .IsRequired().HasMaxLength(10).HasColumnName("Usuario");
+                .IsRequired().HasMaxLength(50).HasColumnName("Usuario");
 
             builder.Property(c => c.Edad)
                 .IsRequired().HasMaxLength(2).HasColumnName("Edad");

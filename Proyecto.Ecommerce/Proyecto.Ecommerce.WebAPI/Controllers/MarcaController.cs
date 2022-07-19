@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Proyecto.Ecommerce.Aplicacion.Dtos;
 using Proyecto.Ecommerce.Aplicacion.Servicios;
 using Proyecto.Ecommerce.Dominio.Entidades;
 
@@ -6,7 +7,7 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MarcaController : ControllerBase, IMarcaAppServicio
+    public class MarcaController : ControllerBase
     {
         private readonly IMarcaAppServicio servicio;
 
@@ -16,9 +17,9 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
         }
 
         [HttpPost]
-        public Task<Marca> AgregarMarcaAsync([FromBody] Marca marca)
+        public Task<MarcaDto> AgregarMarcaAsync([FromBody] AgregarMarcaDto marcaDto)
         {
-            return servicio.AgregarMarcaAsync(marca);
+            return servicio.AgregarMarcaAsync(marcaDto);
         }
 
         [HttpDelete]
@@ -27,22 +28,23 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
             return servicio.EliminarMarcaById(Id);
         }
 
-        [HttpPut]
-        public Task<Marca> ModificarMarcaAsync(Marca marca)
+        [HttpPut("{Id}")]
+        public async Task<bool> ModificarMarcaAsync([FromBody]AgregarMarcaDto marcaDto, string Id)
         {
-            return servicio.ModificarMarcaAsync(marca);
+            await servicio.ModificarMarcaAsync(marcaDto,Id);
+            return true;
         }
 
         [HttpGet("{Id}")]
-        public Task<Marca> ObtenerMarcaByIdAsync(string Id)
+        public Task<MarcaDto> ObtenerMarcaDtoByIdAsync(string Id)
         {
-            return servicio.ObtenerMarcaByIdAsync(Id);
+            return servicio.ObtenerMarcaDtoByIdAsync(Id);
         }
 
         [HttpGet]
-        public Task<ICollection<Marca>> ObtenerMarcasAsync()
+        public Task<ICollection<MarcaDto>> ObtenerMarcasDtoAsync()
         {
-            return servicio.ObtenerMarcasAsync();
+            return servicio.ObtenerMarcasDtoAsync();
         }
     }
 }

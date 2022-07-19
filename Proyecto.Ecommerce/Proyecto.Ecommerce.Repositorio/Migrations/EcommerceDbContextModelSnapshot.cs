@@ -69,8 +69,8 @@ namespace Proyecto.Ecommerce.Infraestructura.Migrations
 
                     b.Property<string>("NombreUsuario")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
                         .HasColumnName("Usuario");
 
                     b.Property<string>("NumeroCedula")

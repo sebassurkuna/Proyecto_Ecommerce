@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Proyecto.Ecommerce.Aplicacion.Dtos;
 using Proyecto.Ecommerce.Aplicacion.Servicios;
 using Proyecto.Ecommerce.Dominio.Entidades;
 
@@ -6,7 +7,7 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductoController : ControllerBase, IProductoAppServicio
+    public class ProductoController : ControllerBase
     {
         private readonly IProductoAppServicio servicio;
 
@@ -16,9 +17,9 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
         }
 
         [HttpPost]
-        public Task<Producto> AgregarProductoAsync([FromBody] Producto producto)
+        public Task<ProductoDto> AgregarProductoAsync([FromBody] AgregarProductoDto productoDto)
         {
-            return servicio.AgregarProductoAsync(producto);
+            return servicio.AgregarProductoAsync(productoDto);
         }
 
         [HttpDelete]
@@ -27,22 +28,28 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
             return servicio.EliminarProductoById(Id);
         }
 
-        [HttpPut]
-        public Task<Producto> ModificarProductoAsync(Producto producto)
+        [HttpPut("{Id}")]
+        public Task<bool> ModificarProductoAsync([FromBody] AgregarProductoDto productoDto, Guid Id)
         {
-            return servicio.ModificarProductoAsync(producto);
+            return servicio.ModificarProductoAsync(productoDto, Id);
         }
 
         [HttpGet("{Id}")]
-        public Task<Producto> ObtenerProductoByIdAsync(Guid Id)
+        public Task<ProductoDto> ObtenerProductoDtoByIdAsync(Guid Id)
         {
-            return servicio.ObtenerProductoByIdAsync(Id);
+            return servicio.ObtenerProductoDtoByIdAsync(Id);
         }
 
         [HttpGet]
-        public Task<ICollection<Producto>> ObtenerProductosAsync()
+        public Task<ICollection<ProductoDto>> ObtenerProductosDtoAsync()
         {
-            return servicio.ObtenerProductosAsync();
+            return servicio.ObtenerProductosDtoAsync();
+        }
+
+        [HttpGet("/Paginado/")]
+        public Task<ICollection<ProductoDto>> GetPaginacion(int limit = 0, int offset = 0, string nombre = "", long precio = 0)
+        {
+            return servicio.GetPaginacion(limit,offset,nombre,precio);
         }
     }
 }

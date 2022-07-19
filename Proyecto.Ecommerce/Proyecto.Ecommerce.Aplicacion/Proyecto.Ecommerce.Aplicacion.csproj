@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Proyecto.Ecommerce.Dominio\Proyecto.Ecommerce.Dominio.csproj" />
+    <ProjectReference Include="..\Proyecto.Ecommerce.Repositorio\Proyecto.Ecommerce.Infraestructura.csproj" />
   </ItemGroup>
 
 </Project>

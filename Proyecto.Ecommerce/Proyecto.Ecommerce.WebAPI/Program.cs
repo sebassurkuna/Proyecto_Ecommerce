@@ -1,8 +1,7 @@
-using Proyecto.Ecommerce.Aplicacion.ImplServicios;
-using Proyecto.Ecommerce.Aplicacion.Servicios;
-using Proyecto.Ecommerce.Dominio.Repositorio;
+using Proyecto.Ecommerce.Aplicacion.InyeccionDependencias;
+using Proyecto.Ecommerce.Dominio.InyeccionDependencias;
 using Proyecto.Ecommerce.Infraestructura.Context;
-using Proyecto.Ecommerce.Infraestructura.Repositorio;
+using Proyecto.Ecommerce.Infraestructura.InyeccionDependencias;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,15 +13,10 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<EcommerceDbContext>();
 
 //Agregar dependencias
-builder.Services.AddTransient<IClienteAppServicio, ClienteAppServicio>();
-builder.Services.AddTransient<IMarcaAppServicio, MarcaAppServicio>();
-builder.Services.AddTransient<IMetodoEntregaAppServicio, MetodoEntregaAppServicio>();
-builder.Services.AddTransient<IOrdenAppServicio, OrdenAppServicio>();
-builder.Services.AddTransient<IOrdenItemsAppServicio, OrdenItemsAppServicio>();
-builder.Services.AddTransient<IProductoAppServicio, ProductoAppServicio>();
-builder.Services.AddTransient<ITipoProductoAppServicio, TipoProductoAppServicio>();
+builder.Services.AddApp(builder.Configuration);
+builder.Services.AddDominio(builder.Configuration);
+builder.Services.AddInfraestructura(builder.Configuration);
 
-builder.Services.AddTransient(typeof(IRepositorioGenerico<>),typeof(RepositorioGenerico<>));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

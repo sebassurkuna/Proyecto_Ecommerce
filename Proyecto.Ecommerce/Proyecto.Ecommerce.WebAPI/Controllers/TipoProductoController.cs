@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Proyecto.Ecommerce.Aplicacion.Dtos;
 using Proyecto.Ecommerce.Aplicacion.Servicios;
 using Proyecto.Ecommerce.Dominio.Entidades;
 
@@ -6,7 +7,7 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TipoProductoController : ControllerBase, ITipoProductoAppServicio
+    public class TipoProductoController : ControllerBase
     {
         private readonly ITipoProductoAppServicio servicio;
 
@@ -16,9 +17,9 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
         }
 
         [HttpPost]
-        public Task<TipoProducto> AgregarTipoProductoAsync([FromBody] TipoProducto tipoProducto)
+        public Task<TipoProductoDto> AgregarTipoProductoAsync([FromBody] AgregarTipoProductoDto tipoProductoDto)
         {
-            return servicio.AgregarTipoProductoAsync(tipoProducto);
+            return servicio.AgregarTipoProductoAsync(tipoProductoDto);
         }
 
         [HttpDelete]
@@ -27,22 +28,22 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
             return servicio.EliminarTipoProductoById(Id);
         }
 
-        [HttpPut]
-        public Task<TipoProducto> ModificarTipoProductoAsync(TipoProducto tipoProducto)
+        [HttpPut("{Id}")]
+        public Task<bool> ModificarTipoProductoAsync([FromBody] AgregarTipoProductoDto tipoProductoDto, string Id)
         {
-            return servicio.ModificarTipoProductoAsync(tipoProducto);
+            return servicio.ModificarTipoProductoAsync(tipoProductoDto,Id);
         }
 
         [HttpGet("{Id}")]
-        public Task<TipoProducto> ObtenerTipoProductoByIdAsync(string Id)
+        public Task<TipoProductoDto> ObtenerTipoProductoDtoByIdAsync(string Id)
         {
-            return servicio.ObtenerTipoProductoByIdAsync(Id);
+            return servicio.ObtenerTipoProductoDtoByIdAsync(Id);
         }
 
         [HttpGet]
-        public Task<ICollection<TipoProducto>> ObtenerTipoProductosAsync()
+        public Task<ICollection<TipoProductoDto>> ObtenerTipoProductosDtoAsync()
         {
-            return servicio.ObtenerTipoProductosAsync();
+            return servicio.ObtenerTipoProductosDtoAsync();
         }
     }
 }

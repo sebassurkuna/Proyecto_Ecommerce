@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "7ulqVsGIy+Cod01hh98Tc8yfzPtm0pFYvDtrOJAG7q4eGFvkEUxzitJlqy46mnk9+uB2viYuGseWeMqXB35JlA==",
+  "dgSpecHash": "rBvhvAQATEQ+yExPR4eL3ns3Sy7mQaDQtDb3xv8JHeaqO0qhZ1zmDP4YlFEY+EkZ81lvNgigTYqQacRtXCTIaA==",
   "success": true,
   "projectFilePath": "C:\\Proyecto_ECommerce_Santacruz\\Proyecto_Ecommerce\\Proyecto.Ecommerce\\Proyecto.Ecommerce.Dominio\\Proyecto.Ecommerce.Dominio.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\sebas\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\sebas\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\sebas\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\sebas\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

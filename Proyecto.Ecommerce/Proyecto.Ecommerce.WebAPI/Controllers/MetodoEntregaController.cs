@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Proyecto.Ecommerce.Aplicacion.Dtos;
 using Proyecto.Ecommerce.Aplicacion.Servicios;
 using Proyecto.Ecommerce.Dominio.Entidades;
 
@@ -6,7 +7,7 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MetodoEntregaController : ControllerBase, IMetodoEntregaAppServicio
+    public class MetodoEntregaController : ControllerBase
     {
         private readonly IMetodoEntregaAppServicio servicio;
 
@@ -16,7 +17,7 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
         }
 
         [HttpPost]
-        public Task<MetodoEntrega> AgregarMetodoEntregaAsync([FromBody] MetodoEntrega metodoEntrega)
+        public Task<MetodoEntregaDto> AgregarMetodoEntregaAsync([FromBody] AgregarMetodoEntregaDto metodoEntrega)
         {
             return servicio.AgregarMetodoEntregaAsync(metodoEntrega);
         }
@@ -27,22 +28,22 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
             return servicio.EliminarMetodoEntregaById(Id);
         }
 
-        [HttpPut]
-        public Task<MetodoEntrega> ModificarMetodoEntregaAsync(MetodoEntrega metodoEntrega)
+        [HttpPut("{Id}")]
+        public Task<bool> ModificarMetodoEntregaAsync(AgregarMetodoEntregaDto metodoEntregaDto,string Id)
         {
-            return servicio.ModificarMetodoEntregaAsync(metodoEntrega);
+            return servicio.ModificarMetodoEntregaAsync(metodoEntregaDto,Id);
         }
 
         [HttpGet("{Id}")]
-        public Task<MetodoEntrega> ObtenerMetodoEntregaByIdAsync(string Id)
+        public Task<MetodoEntregaDto> ObtenerMetodoEntregaDtoByIdAsync(string Id)
         {
-            return servicio.ObtenerMetodoEntregaByIdAsync(Id);
+            return servicio.ObtenerMetodoEntregaDtoByIdAsync(Id);
         }
 
         [HttpGet]
-        public Task<ICollection<MetodoEntrega>> ObtenerMetodosEntregaAsync()
+        public Task<ICollection<MetodoEntregaDto>> ObtenerMetodosEntregaDtoAsync()
         {
-            return servicio.ObtenerMetodosEntregaAsync();
+            return servicio.ObtenerMetodosEntregaDtoAsync();
         }
     }
 }

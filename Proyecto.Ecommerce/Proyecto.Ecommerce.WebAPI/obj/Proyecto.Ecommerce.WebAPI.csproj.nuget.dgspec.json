@@ -30,6 +30,9 @@
             "projectReferences": {
               "C:\\Proyecto_ECommerce_Santacruz\\Proyecto_Ecommerce\\Proyecto.Ecommerce\\Proyecto.Ecommerce.Dominio\\Proyecto.Ecommerce.Dominio.csproj": {
                 "projectPath": "C:\\Proyecto_ECommerce_Santacruz\\Proyecto_Ecommerce\\Proyecto.Ecommerce\\Proyecto.Ecommerce.Dominio\\Proyecto.Ecommerce.Dominio.csproj"
+              },
+              "C:\\Proyecto_ECommerce_Santacruz\\Proyecto_Ecommerce\\Proyecto.Ecommerce\\Proyecto.Ecommerce.Repositorio\\Proyecto.Ecommerce.Infraestructura.csproj": {
+                "projectPath": "C:\\Proyecto_ECommerce_Santacruz\\Proyecto_Ecommerce\\Proyecto.Ecommerce\\Proyecto.Ecommerce.Repositorio\\Proyecto.Ecommerce.Infraestructura.csproj"
               }
             }
           }
@@ -43,6 +46,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -97,6 +106,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

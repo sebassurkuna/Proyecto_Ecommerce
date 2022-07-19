@@ -21,11 +21,9 @@ namespace Proyecto.Ecommerce.Infraestructura.Repositorio
 
         public async Task<bool> DeleteAsync(T Entity)
         {
-
             context.Set<T>().Remove(Entity);
             await context.SaveChangesAsync();
             return true;
-
         }
 
         public async Task<ICollection<T>> GetAsync()
@@ -44,15 +42,23 @@ namespace Proyecto.Ecommerce.Infraestructura.Repositorio
             return await context.Set<T>().FindAsync(Id);
         }
 
-        public async Task UpdateAsync(T Entity)
+        public async Task<bool> UpdateAsync(T Entity)
         {
             context.Set<T>().Update(Entity);
             await context.SaveChangesAsync();
+            return true;
         }
 
         public IQueryable<T> GetQueryable()
         {
             return context.Set<T>().AsQueryable();
+        }
+
+        public async Task<bool> DeleteAllAsync(List<T> listEntities)
+        {
+            context.Set<T>().RemoveRange(listEntities);
+            await context.SaveChangesAsync();
+            return true;
         }
     }
 }

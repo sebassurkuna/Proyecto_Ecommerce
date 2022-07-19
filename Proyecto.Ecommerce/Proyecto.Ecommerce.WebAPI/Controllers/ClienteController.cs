@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Proyecto.Ecommerce.Aplicacion.Dtos;
 using Proyecto.Ecommerce.Aplicacion.Servicios;
-using Proyecto.Ecommerce.Dominio.Entidades;
 
 namespace Proyecto.Ecommerce.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClienteController : ControllerBase, IClienteAppServicio
+    public class ClienteController : ControllerBase
     {
         private readonly IClienteAppServicio servicio;
 
@@ -16,9 +16,9 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
         }
 
         [HttpPost]
-        public Task<Cliente> AgregarClienteAsync([FromBody] Cliente cliente)
+        public Task<ClienteDto> AgregarClienteAsync([FromBody] ClienteDto clienteDto)
         {
-            return servicio.AgregarClienteAsync(cliente);
+            return servicio.AgregarClienteAsync(clienteDto);
         }
 
         [HttpDelete]
@@ -27,22 +27,28 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
             return servicio.EliminarClienteById(Id);
         }
 
-        [HttpPut]
-        public Task<Cliente> ModificarClienteAsync(Cliente cliente)
+        [HttpPut("{Id}")]
+        public Task<bool> ModificarClienteAsync([FromBody] ClienteDto clienteDto, Guid Id)
         {
-            return servicio.ModificarClienteAsync(cliente);
+            return servicio.ModificarClienteAsync(clienteDto,Id);
         }
 
         [HttpGet("{Id}")]
-        public Task<Cliente> ObtenerClienteByIdAsync(Guid Id)
+        public Task<ClienteDto> ObtenerClienteDtoByIdAsync(Guid Id)
         {
-            return servicio.ObtenerClienteByIdAsync(Id);
+            return servicio.ObtenerClienteDtoByIdAsync(Id);
         }
 
         [HttpGet]
-        public Task<ICollection<Cliente>> ObtenerClientesAsync()
+        public Task<ICollection<ClienteDto>> ObtenerClientesDtoAsync()
         {
-            return servicio.ObtenerClientesAsync();
+            return servicio.ObtenerClientesDtoAsync();
+        }
+
+        [HttpGet("/Paginada/")]
+        public Task<ICollection<ClienteDto>> GetPaginacion(int limit=0, int offset=0, string nombre="", string? cedula="")
+        {
+            return servicio.GetPaginacion(limit,offset,nombre,cedula);
         }
     }
 }

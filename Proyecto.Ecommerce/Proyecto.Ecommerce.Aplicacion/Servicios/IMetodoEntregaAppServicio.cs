@@ -1,13 +1,16 @@
-﻿using Proyecto.Ecommerce.Dominio.Entidades;
+﻿using Proyecto.Ecommerce.Aplicacion.Dtos;
+using Proyecto.Ecommerce.Dominio.Entidades;
 
 namespace Proyecto.Ecommerce.Aplicacion.Servicios
 {
     public interface IMetodoEntregaAppServicio
     {
-        Task<ICollection<MetodoEntrega>> ObtenerMetodosEntregaAsync();
+        Task<ICollection<MetodoEntregaDto>> ObtenerMetodosEntregaDtoAsync();
+        Task<MetodoEntregaDto> ObtenerMetodoEntregaDtoByIdAsync(string Id);
         Task<MetodoEntrega> ObtenerMetodoEntregaByIdAsync(string Id);
-        Task<MetodoEntrega> AgregarMetodoEntregaAsync(MetodoEntrega metodoEntrega);
-        Task<MetodoEntrega> ModificarMetodoEntregaAsync(MetodoEntrega metodoEntrega);
+        Task<MetodoEntregaDto> AgregarMetodoEntregaAsync(AgregarMetodoEntregaDto metodoEntrega);
+        Task<bool> ModificarMetodoEntregaAsync(AgregarMetodoEntregaDto metodoEntrega, string Id);
         Task<bool> EliminarMetodoEntregaById(string Id);
+
     }
 }
