@@ -172,11 +172,11 @@ namespace Proyecto.Ecommerce.Infraestructura.Migrations
                         .HasMaxLength(4)
                         .HasColumnType("nvarchar(4)");
 
-                    b.Property<long>("SubTotal")
-                        .HasColumnType("bigint");
+                    b.Property<float>("SubTotal")
+                        .HasColumnType("real");
 
-                    b.Property<long>("Total")
-                        .HasColumnType("bigint");
+                    b.Property<float>("Total")
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Proyecto.Ecommerce.Aplicacion.Dtos;
 using Proyecto.Ecommerce.Aplicacion.Servicios;
 using Proyecto.Ecommerce.Dominio.Entidades;
@@ -7,6 +8,7 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class TipoProductoController : ControllerBase
     {
         private readonly ITipoProductoAppServicio servicio;

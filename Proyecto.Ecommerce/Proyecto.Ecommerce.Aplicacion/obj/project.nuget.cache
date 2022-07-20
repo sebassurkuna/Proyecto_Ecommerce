@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "XzsKaRWPWv2hFWLYn5g6JaMW50M3CizEQbEPlsfHE47hNGDETjnkE7UmGrs0fhVL5t/VWX2Ud+oqXDbx/oYwDA==",
+  "dgSpecHash": "KzoMAy4KWcwKCZgt+Nc2EP2/8UDDoa6DXeRh4a1izRG63MuyshlrkmXgOqbY8T8ckhvxIMdz/EHFphlswFBFXw==",
   "success": true,
   "projectFilePath": "C:\\Proyecto_ECommerce_Santacruz\\Proyecto_Ecommerce\\Proyecto.Ecommerce\\Proyecto.Ecommerce.Aplicacion\\Proyecto.Ecommerce.Aplicacion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sebas\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\sebas\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",
+    "C:\\Users\\sebas\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.1.0\\fluentvalidation.dependencyinjectionextensions.11.1.0.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

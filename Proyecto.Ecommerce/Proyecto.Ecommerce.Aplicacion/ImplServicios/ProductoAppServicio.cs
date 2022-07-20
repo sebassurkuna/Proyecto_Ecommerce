@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Proyecto.Ecommerce.Aplicacion.Dtos;
 using Proyecto.Ecommerce.Aplicacion.Servicios;
@@ -12,22 +13,26 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         private readonly IRepositorioGenerico<Producto> repositorio;
         private readonly IMarcaAppServicio marca;
         private readonly ITipoProductoAppServicio tipoProducto;
+        private readonly IValidator<AgregarProductoDto> validator;
 
         public IMapper Mapper { get; }
 
         public ProductoAppServicio(IRepositorioGenerico<Producto> repositorio, IMapper mapper, 
-            IMarcaAppServicio marca, ITipoProductoAppServicio tipoProducto)
+            IMarcaAppServicio marca, ITipoProductoAppServicio tipoProducto, IValidator<AgregarProductoDto> validator)
         {
             this.repositorio = repositorio;
             Mapper = mapper;
             this.marca = marca;
             this.tipoProducto = tipoProducto;
+            this.validator = validator;
         }
 
         #region Metodo Agregar Productos
         //Método para agregar Productos
         public async Task<ProductoDto> AgregarProductoAsync(AgregarProductoDto productoDto)
         {
+            //Validar
+            validator.ValidateAndThrow(productoDto);
             //Mapeo de AgregarProductoDto--->Producto
             var producto = Mapper.Map<Producto>(productoDto);
 
@@ -60,6 +65,9 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         //Metodo que permite modificar los datos de Producto
         public async Task<bool> ModificarProductoAsync(AgregarProductoDto productoDto, Guid Id)
         {
+            //Validar 
+            validator.ValidateAndThrow(productoDto);
+
             //Se obtiene el objeto Producto por Id
             var producto = await ObtenerProductoByIdAsync(Id);
 

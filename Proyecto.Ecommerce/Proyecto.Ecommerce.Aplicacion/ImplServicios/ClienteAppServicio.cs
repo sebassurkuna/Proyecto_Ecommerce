@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Proyecto.Ecommerce.Aplicacion.Dtos;
 using Proyecto.Ecommerce.Aplicacion.Servicios;
@@ -10,36 +11,57 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
     public class ClienteAppServicio : IClienteAppServicio
     {
         private readonly IRepositorioGenerico<Cliente> repositorio;
+        private readonly IValidator<ClienteDto> validator;
+
         public IMapper Mapper { get; }
 
-        public ClienteAppServicio(IRepositorioGenerico<Cliente> repositorio, IMapper mapper)
+        public ClienteAppServicio(IRepositorioGenerico<Cliente> repositorio, IMapper mapper, IValidator<ClienteDto> validator)
         {
             this.repositorio = repositorio;
             Mapper = mapper;
+            this.validator = validator;
         }
-        
 
+        #region Metodo Agregar Cliente
+        //Método para agregar Cliente
         public async Task<ClienteDto> AgregarClienteAsync(ClienteDto clienteDto)
         {
+            //Validar
+            validator.ValidateAndThrow(clienteDto);
+            //Mapeo de ClienteDto--->Cliente
             var cliente = Mapper.Map<Cliente>(clienteDto);
+            //Completar los datos de Cliente
             cliente.Id=Guid.NewGuid();
             cliente.FechaCreacion=DateTime.Now;
             cliente.Eliminado = false;
 
+            //Agregar Cliente
             await repositorio.AddAsync(cliente);
             return await ObtenerClienteDtoByIdAsync(cliente.Id);
         }
+        #endregion
 
+        #region Metodo Eliminar Cliente
+        //Metodo que permite eliminar una Cliente por el Id
         public async Task<bool> EliminarClienteById(Guid Id)
         {
+            //Obtener el objeto Cliente por Id
             var cliente = await ObtenerClienteByIdAsync(Id);
+            //Eliminar Cliente
             await repositorio.DeleteAsync(cliente);
             return true;
         }
+        #endregion
 
+        #region Metodo Modificar Cliente
+        //Metodo que permite modificar los datos de Cliente
         public async Task<bool> ModificarClienteAsync(ClienteDto clienteDto, Guid Id)
         {
+            //Validar
+            validator.ValidateAndThrow(clienteDto);
+            //Obtener el objeto Cliente por Id
             var cliente = await ObtenerClienteByIdAsync(Id);
+            //Modificar valores de objeto
             cliente.Nombre = clienteDto.Nombre;
             cliente.Apellido = clienteDto.Apellido;
             cliente.Contraseña = clienteDto.Contraseña;
@@ -49,32 +71,48 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
             cliente.Email = clienteDto.Email;
             cliente.FechaModificacion=DateTime.Now;
 
+            //Modificar objeto
             await repositorio.UpdateAsync(cliente);
             return true;
         }
+        #endregion
 
+        #region Metodo Obtener Cliente por Id 
+        //Metodo que permite obtener una ClienteDto por Id
         public async Task<ClienteDto> ObtenerClienteDtoByIdAsync(Guid Id)
         {
+            //Obtener el objeto Cliente por Id
             var cliente = await repositorio.GetByIdAsync(Id);
+            //Mapear de Cliente--->ClienteDto
             var clienteDto = Mapper.Map<ClienteDto>(cliente);
             return clienteDto;
         }
+        #endregion
 
+        #region Metodo Obtener Lista de Cliente
+        //Metodo que permite obtener la lista completa de la tabla Cientes
+        //en objetos de tipo ClienteDto
         public async Task<ICollection<ClienteDto>> ObtenerClientesDtoAsync()
         {
+            //Obtener la lista de objetos Cliente
             var consulta = await repositorio.GetAsync();
+            //Inicializar la lista de Cliente
             var Lista = new List<ClienteDto>();
+            //Mapear de Cliente--->ClienteDto
             foreach (var item in consulta)
             {
                Lista.Add(Mapper.Map<ClienteDto>(item));
             }
             return Lista;
         }
+        #endregion
 
+        #region Metodo publico
         public async Task<Cliente> ObtenerClienteByIdAsync (Guid Id)
         {
             return await repositorio.GetByIdAsync(Id);
         }
+        #endregion
 
         #region Metodo paginacion y busqueda 
         //Método que permite obtener una lista paginada y con criterios de busqueda

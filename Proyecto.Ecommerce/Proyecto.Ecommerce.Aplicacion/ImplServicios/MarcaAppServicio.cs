@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Proyecto.Ecommerce.Aplicacion.Dtos;
 using Proyecto.Ecommerce.Aplicacion.Servicios;
 using Proyecto.Ecommerce.Dominio.Entidades;
@@ -9,18 +10,23 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
     public class MarcaAppServicio : IMarcaAppServicio
     {
         private readonly IRepositorioGenerico<Marca> repositorio;
+        private readonly IValidator<AgregarMarcaDto> validator;
+
         public IMapper Mapper { get; }
 
-        public MarcaAppServicio(IRepositorioGenerico<Marca> repositorio, IMapper mapper)
+        public MarcaAppServicio(IRepositorioGenerico<Marca> repositorio, IMapper mapper, IValidator<AgregarMarcaDto> validator)
         {
             this.repositorio = repositorio;
             Mapper = mapper;
+            this.validator = validator;
         }
 
         #region Metodo Agregar Marcas
         //Método para agregar Marcas
         public async Task<MarcaDto> AgregarMarcaAsync(AgregarMarcaDto marcaDto)
         {
+            //Validar 
+            validator.ValidateAndThrow(marcaDto);
             //Se crea un Id aleatorio de tipo string
             var token = Guid.NewGuid();
             var Id = token.ToString().Replace("-", String.Empty).Substring(0, 4);
@@ -55,6 +61,8 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         //Metodo que permite modificar los datos de Marca
         public async Task<bool> ModificarMarcaAsync(AgregarMarcaDto marcaDto, string Id)
         {
+            //Validar
+            validator.ValidateAndThrow(marcaDto);
             //Se obtiene el objeto Marca por Id
             var marca = await ObtenerMarcaByIdAsync(Id);
 

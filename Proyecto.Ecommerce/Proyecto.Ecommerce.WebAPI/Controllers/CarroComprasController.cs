@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Proyecto.Ecommerce.Aplicacion.Dtos;
 using Proyecto.Ecommerce.Aplicacion.Servicios;
-using Proyecto.Ecommerce.Dominio.Entidades;
 
 namespace Proyecto.Ecommerce.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CarroComprasController : ControllerBase
     {
         private readonly ICarroComprasAppServicio carroCompras;
@@ -56,7 +56,7 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
         }
 
         [HttpGet("/Carro")]
-        public Task<Orden> VerCarro()
+        public Task<OrdenCarroDto> VerCarro()
         {
             return carroCompras.VerCarro();
         }

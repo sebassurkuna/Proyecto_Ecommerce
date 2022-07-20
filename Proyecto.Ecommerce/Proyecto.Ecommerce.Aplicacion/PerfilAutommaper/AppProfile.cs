@@ -22,6 +22,7 @@ namespace Proyecto.Ecommerce.Aplicacion.PerfilAutommaper
             CreateMap<Orden, OrdenDto>();
             CreateMap<OrdenDto, Orden>();
             CreateMap<AgregarOrdenDto, Orden>();
+            CreateMap<Orden, OrdenCarroDto>();
 
             CreateMap<OrdenItems, OrdenItemsDto>();
             CreateMap<OrdenItemsDto, OrdenItems>();

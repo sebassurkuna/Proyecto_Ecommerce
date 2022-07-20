@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Proyecto.Ecommerce.Aplicacion.Servicios;
 using Proyecto.Ecommerce.Aplicacion.ImplServicios;
 using System.Reflection;
+using FluentValidation;
 
 namespace Proyecto.Ecommerce.Aplicacion.InyeccionDependencias
 {
@@ -20,6 +21,9 @@ namespace Proyecto.Ecommerce.Aplicacion.InyeccionDependencias
 
             //Dependecia de Mapeo
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+            //Depenedencia de Validaciones
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             return services;
         }

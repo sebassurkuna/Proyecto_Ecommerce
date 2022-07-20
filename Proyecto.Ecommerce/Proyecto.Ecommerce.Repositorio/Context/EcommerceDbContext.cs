@@ -20,8 +20,6 @@ namespace Proyecto.Ecommerce.Infraestructura.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var conexion = @"Server=(localdb)\mssqllocaldb;Database=ECommerce;Trusted_Connection=True";
-            optionsBuilder.UseSqlServer(conexion);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

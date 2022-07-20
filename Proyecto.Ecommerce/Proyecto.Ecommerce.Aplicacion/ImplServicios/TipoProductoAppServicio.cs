@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Proyecto.Ecommerce.Aplicacion.Dtos;
 using Proyecto.Ecommerce.Aplicacion.Servicios;
 using Proyecto.Ecommerce.Dominio.Entidades;
@@ -9,18 +10,23 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
     public class TipoProductoAppServicio : ITipoProductoAppServicio
     {
         private readonly IRepositorioGenerico<TipoProducto> repositorio;
+        private readonly IValidator<AgregarTipoProductoDto> validator;
+
         public IMapper Mapper { get; }
 
-        public TipoProductoAppServicio(IRepositorioGenerico<TipoProducto> repositorio, IMapper mapper)
+        public TipoProductoAppServicio(IRepositorioGenerico<TipoProducto> repositorio, IMapper mapper, IValidator<AgregarTipoProductoDto> validator)
         {
             this.repositorio = repositorio;
             Mapper = mapper;
+            this.validator = validator;
         }
 
         #region Metodo Agregar Tipo de Producto
         //Método para agregar Tipos de Productos
         public async Task<TipoProductoDto> AgregarTipoProductoAsync(AgregarTipoProductoDto tipoProductoDto)
         {
+            //Validar
+            validator.ValidateAndThrow(tipoProductoDto);
             //Se crea un Id aleatorio de tipo string
             var token = Guid.NewGuid();
             var Id = token.ToString().Replace("-", String.Empty).Substring(0, 4);
@@ -54,6 +60,8 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         //Metodo que permite modificar los datos de TipoProducto
         public async Task<bool> ModificarTipoProductoAsync(AgregarTipoProductoDto tipoProductoDto, string Id)
         {
+            //Validar
+            validator.ValidateAndThrow(tipoProductoDto);
             //Se obtiene el objeto TipoProducto por Id
             var tipoProducto = await ObtenerTipoProductoByIdAsync(Id);
 
