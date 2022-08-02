@@ -1,0 +1,22 @@
+<div *ngIf="productos else cargando">
+    <div class="row row-cols-6">
+    <div class="m-3 card" style="width: 18rem;" *ngFor="let producto of productos">
+        <img src="..." class="card-img-top" alt="...">            
+        <div class="card-body">
+            <h5 class="card-title">{{producto.nombre}}</h5>
+          <p class="card-text">{{producto.descripcion}}</p>
+          <a (click)="ObtenerxId(producto.id)" class="btn btn-primary">Detalles</a>        
+        </div>
+    </div>
+    </div>
+</div>
+
+<ng-template #cargando>
+ Cargando...
+</ng-template>
+
+
+
+
+
+

@@ -8,7 +8,7 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class MetodoEntregaController : ControllerBase
     {
         private readonly IMetodoEntregaAppServicio servicio;
