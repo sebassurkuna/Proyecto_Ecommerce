@@ -1,0 +1,37 @@
+<div class="container">
+    <form [formGroup]="addProductForm" (submit)="Enviar()">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre</span>
+            <input type="text" class="form-control" placeholder="Nombre" 
+             aria-describedby="basic-addon1" formControlName="nombre">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Descripcion</span>
+            <input type="text" class="form-control" placeholder="Descripcion" 
+             aria-describedby="basic-addon1" formControlName="descripcion">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Precio</span>
+            <input type="text" class="form-control" placeholder="Precio" 
+             aria-describedby="basic-addon1" formControlName="precio">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Stock</span>
+            <input type="text" class="form-control" placeholder="Stock" 
+             aria-describedby="basic-addon1" formControlName="stock">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Id de Marca</span>
+            <input type="text" class="form-control" placeholder="MarcaId" 
+             aria-describedby="basic-addon1" formControlName="marcaId">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Id de tipo de producto</span>
+            <input type="text" class="form-control" placeholder="TipoProductoId" 
+             aria-describedby="basic-addon1" formControlName="tipoProductoId">
+        </div>
+        <button class="btn btn-light" type="submit" >
+            Añadir Producto
+        </button>
+    </form>
+</div>
