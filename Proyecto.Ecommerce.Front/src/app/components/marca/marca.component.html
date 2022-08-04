@@ -1,0 +1,20 @@
+<div class="container">
+<div *ngIf="marcas else cargando">
+    <div class="row row-cols-6">
+    <div class="m-3 card" style="width: 18rem;" *ngFor="let marca of marcas">
+        <img src="..." class="card-img-top" alt="...">            
+        <div class="card-body">
+            <a class="card-title button" [routerLink]="['/productos/marca/',marca.nombre]">{{marca.nombre}}</a>
+          <p class="card-text">{{marca.id}}</p>
+          <!-- <a (click)="ObtenerxId(marca.id)" class="btn btn-primary">Detalles</a>     
+          <a [routerLink]="['/marca-update/',marca.id]" class="btn btn-primary">Modificar</a>    
+          <a (click)="Delete(marca.id)" class="btn btn-primary">Eliminar</a>      -->
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
+<ng-template #cargando>
+ Cargando...
+</ng-template>

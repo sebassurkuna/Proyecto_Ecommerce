@@ -1,0 +1,19 @@
+<div class="container">
+    <div *ngIf="marcaById else cargando">
+    <form [formGroup]="updateMarcaForm" (submit)="Enviar()">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre</span>
+            <input type="text" class="form-control" placeholder="Nombre" 
+             aria-describedby="basic-addon1" formControlName="nombre" value="{{marcaById.nombre}}"/>
+        </div>
+        <button class="btn btn-light" type="submit" >
+            Modificar Marca
+        </button>
+    </form>
+</div>
+</div>
+
+<ng-template #cargando>
+    Cargando...
+</ng-template>
+

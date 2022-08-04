@@ -34,7 +34,7 @@ namespace Proyecto.Ecommerce.Aplicacion.Validaciones
             RuleFor(x => x.Edad)
                 .NotNull()
                 .NotEmpty().WithMessage("El campo Edad es requerido")
-                .ExclusiveBetween(18,70).WithMessage("Solo se aceptan clientes con edades entre 18 y 70");
+                .ExclusiveBetween(17,71).WithMessage("Solo se aceptan clientes con edades entre 18 y 70");
 
             RuleFor(x => x.NumeroCedula)
                 .NotNull()

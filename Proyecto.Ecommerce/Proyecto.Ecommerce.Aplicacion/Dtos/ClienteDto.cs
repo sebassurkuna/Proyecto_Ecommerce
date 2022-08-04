@@ -8,6 +8,7 @@ namespace Proyecto.Ecommerce.Aplicacion.Dtos
 {
     public class ClienteDto
     {
+        public Guid? Id { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Contraseña { get; set; }

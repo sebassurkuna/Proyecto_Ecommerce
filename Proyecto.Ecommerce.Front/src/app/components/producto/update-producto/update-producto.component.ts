@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AgregarProductoDto } from 'src/app/models/AgregarProductoDto';
 import { ProductoDto } from 'src/app/models/ProductoDto';
 import { ProductService } from 'src/app/services/product-service';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-update-producto',
@@ -17,7 +18,7 @@ export class UpdateProductoComponent implements OnInit {
   Id:string="";
 
   constructor(private form:FormBuilder, private productService:ProductService,
-     private ruta: ActivatedRoute) { }
+     private ruta: ActivatedRoute, private newRute: Router) { }
 
   ngOnInit(): void {
     this.ruta.params.subscribe(param=>{
@@ -45,7 +46,12 @@ export class UpdateProductoComponent implements OnInit {
       console.log(this.updateProductForm)
       this.productService.UpdateProduct(this.Id,this.updateProductForm.value as AgregarProductoDto)
       .subscribe(item=>console.log(item));
-      alert("Producto modificado con éxito!");
+      Swal.fire({
+        icon: 'success',
+        title: 'Producto actualizado con exito!',
+      }).then(()=>{
+        this.newRute.navigate(['admin/producto']);
+      });
     }
     console.log(this.updateProductForm)
   }

@@ -1,0 +1,26 @@
+<div class="container">
+  <button class="btn" routerLink="add">Añadir Marca</button>
+</div>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre de marca</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let marca of marcas">
+      <tr>
+        <th scope="row">{{marca.id}}</th>
+        <td>{{marca.nombre}}</td>
+        <td>
+            <a [routerLink]="['update/',marca.id]" class="btn btn-primary">Modificar</a>    
+            <a (click)="Delete(marca.id)" class="btn btn-primary">Eliminar</a>    
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  

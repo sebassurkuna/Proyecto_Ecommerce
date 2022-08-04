@@ -1,0 +1,42 @@
+<div class="container">
+    <form [formGroup]="addClienteForm" (submit)="Enviar()">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre</span>
+            <input type="text" class="form-control" placeholder="Nombre" 
+             aria-describedby="basic-addon1" formControlName="nombre">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Apellido</span>
+            <input type="text" class="form-control" placeholder="Apellido" 
+             aria-describedby="basic-addon1" formControlName="apellido">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Contraseña</span>
+            <input type="text" class="form-control" placeholder="Contraseña" 
+             aria-describedby="basic-addon1" formControlName="contraseña">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre de Usuario</span>
+            <input type="text" class="form-control" placeholder="NombreUsuario" 
+             aria-describedby="basic-addon1" formControlName="nombreUsuario">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Edad</span>
+            <input type="text" class="form-control" placeholder="edad" 
+             aria-describedby="basic-addon1" formControlName="edad">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Numero de Cedula</span>
+            <input type="text" class="form-control" placeholder="NumeroCedula" 
+             aria-describedby="basic-addon1" formControlName="numeroCedula">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Email @</span>
+            <input type="text" class="form-control" placeholder="Email" 
+             aria-describedby="basic-addon1" formControlName="email">
+        </div>
+        <button class="btn btn-light" type="submit" >
+            Añadir Cliente
+        </button>
+    </form>
+</div>

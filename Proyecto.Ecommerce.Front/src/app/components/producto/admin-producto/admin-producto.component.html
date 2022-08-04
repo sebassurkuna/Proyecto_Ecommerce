@@ -1,0 +1,28 @@
+<div class="container">
+  <button class="btn" routerLink="add">Añadir Producto</button>
+</div>
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let producto of productos">
+          <tr>
+            <th scope="row">{{producto.nombre}}</th>
+            <td>{{producto.descripcion}}</td>
+            <td>{{producto.precio}}</td>
+            <td>{{producto.stock}}</td>
+            <td>
+                <a [routerLink]="['update/',producto.id]" class="btn btn-primary">Modificar</a>    
+                <a (click)="Delete(producto.id)" class="btn btn-primary">Eliminar</a>    
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

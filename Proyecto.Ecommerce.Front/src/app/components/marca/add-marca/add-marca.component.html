@@ -1,0 +1,12 @@
+<div class="container">
+    <form [formGroup]="addMarcaForm" (submit)="Enviar()">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre</span>
+            <input type="text" class="form-control" placeholder="Nombre" 
+             aria-describedby="basic-addon1" formControlName="nombre">
+        </div>
+        <button class="btn btn-light" type="submit" >
+            Añadir Marca
+        </button>
+    </form>
+</div>

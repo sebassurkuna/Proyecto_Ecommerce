@@ -1,4 +1,5 @@
 import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProductoDto } from 'src/app/models/ProductoDto';
 import { ProductService } from 'src/app/services/product-service';
 
@@ -10,14 +11,24 @@ import { ProductService } from 'src/app/services/product-service';
 export class ProductoComponent implements OnInit {
 
   productos:ProductoDto[]=[];
-  constructor(private productService:ProductService) { }
+  pipeMarca:string="";
+  pipeTipoProducto:string="";
+  constructor(private productService:ProductService, private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-    this.productService.GetProducts().subscribe(item=>{
-      this.productos=item;
-      console.log(item)
-    })
+    this.ruta.params.subscribe(param=>{
+      if(param['pipeMarca']){
+        this.pipeMarca=param['pipeMarca'];
+      }
+      if(param['pipeTipoProducto']){
+        this.pipeTipoProducto=param['pipeTipoProducto'];
+      }
+      this.productService.GetProducts().subscribe(item=>{
+        this.productos=item;
+        console.log(item)
+      })
+    });
     console.log(this.productos)
     
   }
