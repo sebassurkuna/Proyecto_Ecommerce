@@ -30,24 +30,22 @@ export class CarroComprasComponent implements OnInit, AfterContentInit {
   }
 
     ngOnInit() {
-    this.carroCompras.AgregarOrden(this.orden).subscribe(item=>{
-      console.log(item)
-    })
 
-    this.carroCompras.VerCarro().pipe(
-      map((resp:any)=>{
-        this.carro=resp;
-        return this.carro;
-      }),mergeMap(resp=>resp.ordenItemsDtos),pipe(
-        map(resp=>{
-          this.servicioProducto.GetById(resp.productoId).subscribe(item=>{
-            this.productos.push(item as ProductoDto);
-            this.stock.push(Array.from(Array(item.stock+resp.cantidadProducto).keys()))
-          });
-          return this.productos;
+      this.carroCompras.AgregarOrden(this.orden).subscribe(resp=>{
+        console.log(resp);
+        this.carroCompras.VerCarro().subscribe(itemCarro=>{
+          this.carro=itemCarro as OrdenCarroDto;
+          console.log(this.carro)
+          this.carro.ordenItemsDtos.forEach(itemOrden=>{
+            this.servicioProducto.GetById(itemOrden.productoId).subscribe(item=>{
+              this.productos.push(item as ProductoDto);
+              console.log(item)
+              this.stock.push(Array.from(Array(item.stock+itemOrden.cantidadProducto).keys()))
+              console.log(this.stock)
+            });
+          })
         })
-      )
-    ).subscribe(item=>console.log(item));
+      })
   }
 
   Select(stock:any,Id:string,index:number){
@@ -88,6 +86,5 @@ export class CarroComprasComponent implements OnInit, AfterContentInit {
       });
     })
   }
-
 
 }
