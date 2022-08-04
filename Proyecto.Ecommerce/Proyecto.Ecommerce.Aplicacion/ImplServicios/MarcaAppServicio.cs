@@ -26,7 +26,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<MarcaDto> AgregarMarcaAsync(AgregarMarcaDto marcaDto)
         {
             //Validar 
-            validator.ValidateAndThrow(marcaDto);
+           // validator.ValidateAndThrow(marcaDto);
             //Se crea un Id aleatorio de tipo string
             var token = Guid.NewGuid();
             var Id = token.ToString().Replace("-", String.Empty).Substring(0, 4);
@@ -62,7 +62,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<bool> ModificarMarcaAsync(AgregarMarcaDto marcaDto, string Id)
         {
             //Validar
-            validator.ValidateAndThrow(marcaDto);
+            //validator.ValidateAndThrow(marcaDto);
             //Se obtiene el objeto Marca por Id
             var marca = await ObtenerMarcaByIdAsync(Id);
 

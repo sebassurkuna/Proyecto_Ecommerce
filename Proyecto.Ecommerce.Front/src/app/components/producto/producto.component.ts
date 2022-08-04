@@ -30,21 +30,11 @@ export class ProductoComponent implements OnInit {
       })
     });
     console.log(this.productos)
-    
   }
 
-  ObtenerxId(Id:string){
-   this.productService.GetById(Id).subscribe(item=>{
-    console.log(item);
-   })
-  }
-
-  Delete(Id:string){
-    this.productService.DeleteProductById(Id).subscribe(item=>{
-      console.log(item);
-      if(item){
-        window.location.reload();
-      }
-    });
-  }
+  // ObtenerxId(Id:string){
+  //  this.productService.GetById(Id).subscribe(item=>{
+  //   console.log(item);
+  //  })
+  // }
 }

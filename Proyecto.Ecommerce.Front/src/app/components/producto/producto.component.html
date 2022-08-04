@@ -7,9 +7,8 @@
                 <div class="card-body">
                     <h5 class="card-title">{{producto.nombre}}</h5>
                 <p class="card-text">{{producto.descripcion}}</p>
-                <a (click)="ObtenerxId(producto.id)" class="btn btn-primary">Detalles</a>     
-                <a [routerLink]="['/producto-update/',producto.id]" class="btn btn-primary">Modificar</a>    
-                <a (click)="Delete(producto.id)" class="btn btn-primary">Eliminar</a>     
+                <p class="card-text">{{producto.precio | currency:'USD'}}</p>
+                <a [routerLink]="['/detalle-producto/',producto.id]" class="btn btn-primary">Detalles</a>  
                 </div>
             </div>
         </div>

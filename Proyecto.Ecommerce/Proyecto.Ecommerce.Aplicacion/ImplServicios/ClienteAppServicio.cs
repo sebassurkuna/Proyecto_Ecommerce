@@ -27,7 +27,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<ClienteDto> AgregarClienteAsync(ClienteDto clienteDto)
         {
             //Validar
-            validator.ValidateAndThrow(clienteDto);
+            //validator.ValidateAndThrow(clienteDto);
             //Mapeo de ClienteDto--->Cliente
             var cliente = Mapper.Map<Cliente>(clienteDto);
             //Completar los datos de Cliente
@@ -58,7 +58,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<bool> ModificarClienteAsync(ClienteDto clienteDto, Guid Id)
         {
             //Validar
-            validator.ValidateAndThrow(clienteDto);
+            //validator.ValidateAndThrow(clienteDto);
             //Obtener el objeto Cliente por Id
             var cliente = await ObtenerClienteByIdAsync(Id);
             //Modificar valores de objeto

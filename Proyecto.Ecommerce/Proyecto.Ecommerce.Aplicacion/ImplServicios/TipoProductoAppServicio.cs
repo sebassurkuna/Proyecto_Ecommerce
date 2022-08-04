@@ -26,7 +26,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<TipoProductoDto> AgregarTipoProductoAsync(AgregarTipoProductoDto tipoProductoDto)
         {
             //Validar
-            validator.ValidateAndThrow(tipoProductoDto);
+            //validator.ValidateAndThrow(tipoProductoDto);
             //Se crea un Id aleatorio de tipo string
             var token = Guid.NewGuid();
             var Id = token.ToString().Replace("-", String.Empty).Substring(0, 4);
@@ -61,7 +61,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<bool> ModificarTipoProductoAsync(AgregarTipoProductoDto tipoProductoDto, string Id)
         {
             //Validar
-            validator.ValidateAndThrow(tipoProductoDto);
+            //validator.ValidateAndThrow(tipoProductoDto);
             //Se obtiene el objeto TipoProducto por Id
             var tipoProducto = await ObtenerTipoProductoByIdAsync(Id);
 

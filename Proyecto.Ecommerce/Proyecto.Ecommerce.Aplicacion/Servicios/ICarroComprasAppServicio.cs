@@ -60,5 +60,12 @@ namespace Proyecto.Ecommerce.Aplicacion.Servicios
         /// <param name="Id"></param>
         /// <returns>Task&lt;bool&gt;</returns>
         Task<bool> ModificarOrden(AgregarOrdenDto ordenDto, Guid Id);
+
+        /// <summary>
+        /// Metodo que permite eliminar toda la informacion de la tablas OrdenItems y Ordenes
+        /// sin modificar el stock de los productos
+        /// </summary>
+        /// <returns>Task&lt;bool&gt;</returns>
+        Task<bool> SimularCompra();
     }
 }

@@ -75,7 +75,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<OrdenItemsDto> AgregarProductosCarro(AgregarOrdenItemsDto ordenItemsDto)
         {
             //Validar
-            validatorOItems.ValidateAndThrow(ordenItemsDto);
+            //validatorOItems.ValidateAndThrow(ordenItemsDto);
 
             //Validar el stock solicitado
             var validarStock = ValidarStock(ordenItemsDto.ProductoId, ordenItemsDto.CantidadProducto);
@@ -167,7 +167,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<bool> AgregarOrden(AgregarOrdenDto ordenDto)
         {
             //Validar
-            validatorOrder.ValidateAndThrow(ordenDto);
+            //validatorOrder.ValidateAndThrow(ordenDto);
 
             //Obtener la consulta
             var ordenConsulta = repositorioOrden.GetQueryable();
@@ -228,7 +228,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<bool> ModificarOrden(AgregarOrdenDto ordenDto, Guid Id)
         {
             //Validar
-            validatorOrder.ValidateAndThrow(ordenDto);
+            //validatorOrder.ValidateAndThrow(ordenDto);
 
             //Obtener el objetos Orden por Id
             var orden = await repositorioOrden.GetByIdAsync(Id);
@@ -325,6 +325,32 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
             {
                 await EliminarProductosStock(-item.CantidadProducto, item.ProductoId);
             }
+
+            //Eliminar OrdenItems
+            await repositorioOItem.DeleteAllAsync(ordenItems);
+            //Eliminar Orden
+            await repositorioOrden.DeleteAsync(orden);
+            return true;
+        }
+        #endregion
+
+        #region Metodo Simular compra
+        //Metodo que permite simular la compra, vaciando el carro de compras 
+        //sin modificar el stock de los productos 
+        public async Task<bool> SimularCompra()
+        {
+            //Obtener consulta de Orden
+            var ordenConsulta = repositorioOrden.GetQueryable();
+            //Obtener el primero o null
+            var orden = ordenConsulta.FirstOrDefault();
+            //Validar si existe Orden
+            if (orden == null)
+            {
+                throw new ArgumentException("No existe carro de compras");
+            }
+
+            //Obtener la lista de OrdenItems a eliminar (todos)
+            var ordenItems = (List<OrdenItems>?)await repositorioOItem.GetAsync();
 
             //Eliminar OrdenItems
             await repositorioOItem.DeleteAllAsync(ordenItems);

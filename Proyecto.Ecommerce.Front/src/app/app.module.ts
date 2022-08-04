@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { AddProductoComponent } from './components/producto/add-producto/add-producto.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateProductoComponent } from './components/producto/update-producto/update-producto.component';
 import { MarcaComponent } from './components/marca/marca.component';
 import { AddMarcaComponent } from './components/marca/add-marca/add-marca.component';
@@ -26,6 +26,8 @@ import { AdminProductoComponent } from './components/producto/admin-producto/adm
 import { AdminTipoProductoComponent } from './components/tipo-producto/admin-tipo-producto/admin-tipo-producto.component';
 import { NavBarClienteAdminComponent } from './components/clientes/nav-bar-cliente-admin/nav-bar-cliente-admin.component';
 import { NavBarAdminComponent } from './components/admin/nav-bar-admin/nav-bar-admin.component';
+import { DetallesComponent } from './components/producto/detalles/detalles.component';
+import { CarroComprasComponent } from './components/carro-compras/carro-compras.component';
 
 @NgModule({
   declarations: [
@@ -52,12 +54,15 @@ import { NavBarAdminComponent } from './components/admin/nav-bar-admin/nav-bar-a
     AdminTipoProductoComponent,
     NavBarClienteAdminComponent,
     NavBarAdminComponent,
+    DetallesComponent,
+    CarroComprasComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

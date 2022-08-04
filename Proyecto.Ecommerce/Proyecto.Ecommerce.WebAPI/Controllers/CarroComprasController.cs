@@ -60,5 +60,11 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
         {
             return carroCompras.VerCarro();
         }
+
+        [HttpDelete("/Compra")]
+        public Task<bool> SimularCompra()
+        {
+            return carroCompras.SimularCompra();
+        }
     }
 }

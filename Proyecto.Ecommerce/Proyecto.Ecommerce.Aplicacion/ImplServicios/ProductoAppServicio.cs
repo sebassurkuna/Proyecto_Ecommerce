@@ -32,7 +32,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<ProductoDto> AgregarProductoAsync(AgregarProductoDto productoDto)
         {
             //Validar
-            validator.ValidateAndThrow(productoDto);
+           // validator.ValidateAndThrow(productoDto);
             //Mapeo de AgregarProductoDto--->Producto
             var producto = Mapper.Map<Producto>(productoDto);
 
@@ -66,7 +66,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<bool> ModificarProductoAsync(AgregarProductoDto productoDto, Guid Id)
         {
             //Validar 
-            validator.ValidateAndThrow(productoDto);
+           // validator.ValidateAndThrow(productoDto);
 
             //Se obtiene el objeto Producto por Id
             var producto = await ObtenerProductoByIdAsync(Id);

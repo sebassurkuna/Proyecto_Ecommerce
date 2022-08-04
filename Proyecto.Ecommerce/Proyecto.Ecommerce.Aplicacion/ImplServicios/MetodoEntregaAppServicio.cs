@@ -26,7 +26,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<MetodoEntregaDto> AgregarMetodoEntregaAsync(AgregarMetodoEntregaDto metodoEntregaDto)
         {
             //Validar
-            validator.ValidateAndThrow(metodoEntregaDto);
+           // validator.ValidateAndThrow(metodoEntregaDto);
             //Se crea un Id aleatorio de tipo string
             var token = Guid.NewGuid();
             var Id = token.ToString().Replace("-", String.Empty).Substring(0, 4);
@@ -61,7 +61,7 @@ namespace Proyecto.Ecommerce.Aplicacion.ImplServicios
         public async Task<bool> ModificarMetodoEntregaAsync(AgregarMetodoEntregaDto metodoEntregaDto, string Id)
         {
             //Validar
-            validator.ValidateAndThrow(metodoEntregaDto);
+            //validator.ValidateAndThrow(metodoEntregaDto);
             //Se obtiene el objeto MetodoEntrega por Id
             var metodoEntrega = await ObtenerMetodoEntregaByIdAsync(Id);
             //Se modifican sus campos

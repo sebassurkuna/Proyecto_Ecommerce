@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div *ngIf="productos!=[] else cargando">
+                <div class="card mb-3" style="max-width: 540px;" *ngFor="let producto of productos; let i=index">
+                    <div class="row g-0">
+                      <div class="col-md-2">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{{producto.nombre}}</h5>
+                          <p class="card-text">Descripcion: {{producto.descripcion}}</p>
+                          <p class="card-text">Precio: {{producto.precio | currency:"USD"}}</p>
+                          <p class="card-text">Marca: {{producto.nombreMarca}}</p>
+                          <p class="card-text">Tipo de Producto: {{producto.nombreTipoProducto}}</p>
+                          <p class="card-text">Cantidad de producto: {{carro.ordenItemsDtos[i].cantidadProducto}}</p>
+                          <select name="stock" id="stock" class="btn btn-secondary" [(ngModel)]="cantidadProducto[i]"
+                           (change)="Select($any($event.target).value,producto.id,i)">
+                            <option *ngFor="let item of stock[i]" value={{item+1}}>
+                                {{item+1}}
+                            </option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="col-6" *ngIf="carro else cargando">
+            <div class="card border-light mb-3" style="max-width: 540px;">
+                <div class="card-header">Detalles</div>
+                <div class="card-body">
+                  <h5 class="card-title">Metodo de entrega</h5>
+                  <p class="card-text">Nombre: {{carro.metodoEntrega.nombre}}</p>
+                  <p class="card-text">Descripcion: {{carro.metodoEntrega.descripcion}}</p>
+                  <p class="card-text">Costo: {{carro.metodoEntrega.costoEntrega | currency:"USD"}}</p>
+                  <h5 class="card-title">Factura</h5>
+                  <p class="card-text">Sub total: {{carro.subTotal | currency:"USD"}}</p>
+                  <p class="card-text">Subtotal: {{carro.iva/100 | percent}}</p>
+                  <p class="card-text">Total: {{carro.total | currency:"USD"}}</p>
+                  <button class="btn" routerLink="">
+                    Seguir Comprando
+                  </button>
+                  <button class="btn" (click)="Pagar()">Pagar</button>
+                  <button class="btn" (click)="EliminarCarro()">Eliminar compra</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #cargando>
+    ...Cargando
+</ng-template>

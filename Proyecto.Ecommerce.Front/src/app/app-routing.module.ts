@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './components/admin/admin.component';
 import { NavBarAdminComponent } from './components/admin/nav-bar-admin/nav-bar-admin.component';
+import { CarroComprasComponent } from './components/carro-compras/carro-compras.component';
 import { AddClienteComponent } from './components/clientes/add-cliente/add-cliente.component';
 import { AdminClienteComponent } from './components/clientes/admin-cliente/admin-cliente.component';
 import { UpdateClienteComponent } from './components/clientes/update-cliente/update-cliente.component';
@@ -12,6 +13,7 @@ import { UpdateMarcaComponent } from './components/marca/update-marca/update-mar
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AddProductoComponent } from './components/producto/add-producto/add-producto.component';
 import { AdminProductoComponent } from './components/producto/admin-producto/admin-producto.component';
+import { DetallesComponent } from './components/producto/detalles/detalles.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { UpdateProductoComponent } from './components/producto/update-producto/update-producto.component';
 import { AddTipoProductoComponent } from './components/tipo-producto/add-tipo-producto/add-tipo-producto.component';
@@ -29,6 +31,7 @@ const routes: Routes = [
     {path:"productos/tipoProducto/:pipeTipoProducto",component:ProductoComponent},
     {path:"marcas",component:MarcaComponent},
     {path:"tipoProducto",component:TipoProductoComponent},
+    {path:"detalle-producto/:id",component:DetallesComponent}
   ]},
   {path:"admin",component:NavBarAdminComponent,children:[
     {path:"",component:AdminComponent},
@@ -45,6 +48,7 @@ const routes: Routes = [
     {path:"cliente/add",component:AddClienteComponent},
     {path:"cliente/update/:id", component:UpdateClienteComponent}
   ]},
+  {path:"carro-compras",component:CarroComprasComponent}
 ];
 
 
