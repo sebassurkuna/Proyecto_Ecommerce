@@ -42,6 +42,7 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public Task<ICollection<ClienteDto>> ObtenerClientesDtoAsync()
         {
             return servicio.ObtenerClientesDtoAsync();

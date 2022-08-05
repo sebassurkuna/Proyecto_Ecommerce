@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container" >
     <div class="row">
         <div class="col-6">
             <div *ngIf="productos!=[] else cargando">
                 <div class="card mb-3" style="max-width: 540px;" *ngFor="let producto of productos; let i=index">
                     <div class="row g-0">
-                      <div class="col-md-2">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
+                      <div class="col-md-4">
+                        <img src="https://web-static.wrike.com/blog/content/uploads/2015/12/errores-fatales-en-el-lanzamiento-de-un-producto.jpg?av=c15b07c7167f3b187a8ec309e3d76964" class="img-fluid rounded-start" alt="...">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
@@ -39,11 +39,11 @@
                   <p class="card-text">Sub total: {{carro.subTotal | currency:"USD"}}</p>
                   <p class="card-text">Subtotal: {{carro.iva/100 | percent}}</p>
                   <p class="card-text">Total: {{carro.total | currency:"USD"}}</p>
-                  <button class="btn" routerLink="">
+                  <button class="btn btn-warning" routerLink="">
                     Seguir Comprando
                   </button>
-                  <button class="btn" (click)="Pagar()">Pagar</button>
-                  <button class="btn" (click)="EliminarCarro()">Eliminar compra</button>
+                  <button class="btn btn-success" (click)="Pagar()">Pagar</button>
+                  <button class="btn btn-danger" (click)="EliminarCarro()">Eliminar compra</button>
                 </div>
               </div>
         </div>

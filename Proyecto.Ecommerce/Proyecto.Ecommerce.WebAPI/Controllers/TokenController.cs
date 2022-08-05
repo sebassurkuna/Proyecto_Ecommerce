@@ -25,7 +25,7 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
 
 
         [HttpPost]
-        public async Task<string> TokenAsync(string user, string password)
+        public async Task<JSON> TokenAsync(string user, string password)
         {
 
             //1. Validar User.
@@ -69,9 +69,15 @@ namespace Proyecto.Ecommerce.WebAPI.Controllers
                     signingCredentials: signIn);
 
               var jwt = new JwtSecurityTokenHandler().WriteToken(tokenDescriptor);
-
-            return jwt;
+            var json = new JSON();
+            json.Token = jwt;
+            return json;
 
         }
+    }
+
+    public class JSON
+    {
+        public string Token { get; set; }
     }
 }

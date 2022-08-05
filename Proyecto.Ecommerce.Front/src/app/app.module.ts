@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +28,8 @@ import { NavBarClienteAdminComponent } from './components/clientes/nav-bar-clien
 import { NavBarAdminComponent } from './components/admin/nav-bar-admin/nav-bar-admin.component';
 import { DetallesComponent } from './components/producto/detalles/detalles.component';
 import { CarroComprasComponent } from './components/carro-compras/carro-compras.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptorInterceptor } from './interceptors/auth-interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { CarroComprasComponent } from './components/carro-compras/carro-compras.
     NavBarAdminComponent,
     DetallesComponent,
     CarroComprasComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,11 @@ import { CarroComprasComponent } from './components/carro-compras/carro-compras.
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

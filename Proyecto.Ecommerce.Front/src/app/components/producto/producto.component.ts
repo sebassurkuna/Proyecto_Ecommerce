@@ -31,10 +31,4 @@ export class ProductoComponent implements OnInit {
     });
     console.log(this.productos)
   }
-
-  // ObtenerxId(Id:string){
-  //  this.productService.GetById(Id).subscribe(item=>{
-  //   console.log(item);
-  //  })
-  // }
 }

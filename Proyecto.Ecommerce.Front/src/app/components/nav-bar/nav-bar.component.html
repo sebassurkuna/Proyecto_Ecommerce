@@ -1,12 +1,12 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 justify-content-between bg-white border-bottom shadow-sm">
-    <button class="btn" routerLink="/admin">Administrar</button>
+    <button class="btn" [routerLink]="['/login',admin]">Administrar</button>
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="p-2 text-dark" routerLink="/productos" >Productos</a>
       <a class="p-2 text-dark" routerLink="/marcas" >Marcas</a>
       <a class="p-2 text-dark " routerLink="/tipoProducto" >TipoProducto</a>
     </nav>
     <div class="d-flex align-items-center">
-        <button class="btn" routerLink="/carro-compras">CarroCompras</button>
+        <button class="btn" [routerLink]="['/login',carro]">CarroCompras</button>
     </div>
   </div>
   <router-outlet></router-outlet>

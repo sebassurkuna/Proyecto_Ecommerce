@@ -1,0 +1,13 @@
+<div class="container" style="max-width: 20%;" >
+    <div class="mb-3">
+        <label class="form-label">Nombre de usuario</label>
+        <input type="text" class="form-control" placeholder="UserName" [(ngModel)]="user"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Contraseña</label>
+        <input type="text" class="form-control" placeholder="Password" [(ngModel)]="password"/>
+    </div>
+    <button class="btn btn-warning" (click)="Registrarse()">
+        Iniciar Sesion
+    </button>
+</div>

@@ -6,6 +6,7 @@ import { CarroComprasComponent } from './components/carro-compras/carro-compras.
 import { AddClienteComponent } from './components/clientes/add-cliente/add-cliente.component';
 import { AdminClienteComponent } from './components/clientes/admin-cliente/admin-cliente.component';
 import { UpdateClienteComponent } from './components/clientes/update-cliente/update-cliente.component';
+import { LoginComponent } from './components/login/login.component';
 import { AddMarcaComponent } from './components/marca/add-marca/add-marca.component';
 import { AdminMarcaComponent } from './components/marca/admin-marca/admin-marca.component';
 import { MarcaComponent } from './components/marca/marca.component';
@@ -48,7 +49,8 @@ const routes: Routes = [
     {path:"cliente/add",component:AddClienteComponent},
     {path:"cliente/update/:id", component:UpdateClienteComponent}
   ]},
-  {path:"carro-compras",component:CarroComprasComponent}
+  {path:"carro-compras",component:CarroComprasComponent},
+  {path:"login/:option",component:LoginComponent},
 ];
 
 
